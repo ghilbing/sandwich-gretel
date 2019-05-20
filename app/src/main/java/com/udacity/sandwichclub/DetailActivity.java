@@ -1,8 +1,13 @@
 package com.udacity.sandwichclub;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +29,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView ingredientesTv;
     private ImageView ingredientsIv;
     private Sandwich sandwich = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +73,7 @@ public class DetailActivity extends AppCompatActivity {
         populateUI();
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.mipmap.placeholder)
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
@@ -79,7 +86,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI() {
         descriptionTv.setText(sandwich.getDescription());
-        placeOfOriginTv.setText(sandwich.getPlaceOfOrigin());
+        placeOfOriginTv.setText(sandwich.getPlaceOfOriginNoEmpty());
         ingredientesTv.setText(sandwich.getIngredientsString());
         alsoKnownAsTv.setText(sandwich.getAlsoKnownAsString());
 

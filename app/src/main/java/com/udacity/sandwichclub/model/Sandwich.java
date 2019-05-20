@@ -1,8 +1,16 @@
 package com.udacity.sandwichclub.model;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.res.Resources;
+
+import com.udacity.sandwichclub.R;
+
 import java.util.List;
 
-public class Sandwich {
+
+
+public class Sandwich  {
 
     private String mainName;
     private List<String> alsoKnownAs = null;
@@ -10,6 +18,10 @@ public class Sandwich {
     private String description;
     private String image;
     private List<String> ingredients = null;
+
+
+
+
 
     /**
      * No args constructor for use in serialization
@@ -24,7 +36,10 @@ public class Sandwich {
         this.description = description;
         this.image = image;
         this.ingredients = ingredients;
+
     }
+
+
 
     public String getMainName() {
         return mainName;
@@ -74,21 +89,56 @@ public class Sandwich {
         this.ingredients = ingredients;
     }
 
+    // method to get a list of ingredients
+
     public String getIngredientsString(){
         StringBuilder output = new StringBuilder();
-        for (String str : ingredients){
-            output.append(str + ", ");
+        int size = ingredients.size();
+        for (int i = 0; i < size-1; i++) {
+            output.append(ingredients.get(i) + ", ");
         }
+        output.append(" " + MyApplication.getContext().getResources().getString(R.string.and) + " " + ingredients.get(size-1) + ".");
+
         String stringIngredients = output.toString();
         return stringIngredients;
     }
 
+    // method to get a list of alternative names
+
     public String getAlsoKnownAsString(){
         StringBuilder output = new StringBuilder();
-        for (String str : alsoKnownAs){
-            output.append(str + ", ");
+        int size = alsoKnownAs.size();
+
+        if (size == 1){
+                output.append(alsoKnownAs.get(size-1) + ".");
         }
+        else if (size > 1){
+            for (int i = 0; i < size-1; i++) {
+                output.append(alsoKnownAs.get(i) + ", " );
+            }
+            output.append(" " + MyApplication.getContext().getResources().getString(R.string.and) + " " + alsoKnownAs.get(size-1) + ".");
+        }
+        else if (size == 0){
+
+            output.append(MyApplication.getContext().getResources().getString(R.string.no_information));
+        }
+
         String stringAlsoKnownAs = output.toString();
         return stringAlsoKnownAs;
     }
+
+    // method to get place of origin
+
+    public String getPlaceOfOriginNoEmpty(){
+        String place = "";
+        if (placeOfOrigin.isEmpty()){
+            place = MyApplication.getContext().getResources().getString(R.string.no_information);
+        } else {
+            place = placeOfOrigin;
+        }
+        return place;
+    }
+
+
+
 }

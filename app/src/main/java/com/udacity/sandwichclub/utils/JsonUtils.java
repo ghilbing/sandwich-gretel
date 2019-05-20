@@ -29,7 +29,6 @@ public class JsonUtils {
 
             for (int i = 0; i <alsoKnownAsA.length() ; i++) {
                 aka.add(alsoKnownAsA.getString(i));
-                Log.i("ALSOKNOWNAS", aka.toString());
             }
 
             String placeOfOrigin = mainJsonObject.getString("placeOfOrigin");
