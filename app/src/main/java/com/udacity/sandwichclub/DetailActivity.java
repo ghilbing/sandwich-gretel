@@ -4,6 +4,7 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         ingredientsIv = findViewById(R.id.image_iv);
         descriptionTv = findViewById(R.id.description_tv);
@@ -86,5 +90,17 @@ public class DetailActivity extends AppCompatActivity {
         ingredientesTv.setText(sandwich.getIngredientsString());
         alsoKnownAsTv.setText(sandwich.getAlsoKnownAsString());
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

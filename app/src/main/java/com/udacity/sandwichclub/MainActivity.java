@@ -8,6 +8,8 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
+
 import com.udacity.sandwichclub.recyclerView.SandwichAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,10 +47,14 @@ public class MainActivity extends AppCompatActivity {
         //specify an adapter
         adapter = new SandwichAdapter(sandwiches);
         recyclerView.setAdapter(adapter);
+        if (mListState != null){
+            recyclerView.getLayoutManager().onRestoreInstanceState(mListState);
+        }
         adapter.notifyDataSetChanged();
 
 
     }
+
 
 
     @Override
