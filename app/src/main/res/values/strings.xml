@@ -17,6 +17,7 @@
     <!-- Sandwich utils-->
     <string name="no_information">There is no information available.</string>
     <string name="and">and</string>
+    <string name="recycler_scroll_position_key">Scroll Position</string>
 
     <string-array name="sandwich_names">
         <item>Ham and cheese sandwich</item>

@@ -1,8 +1,5 @@
 package com.udacity.sandwichclub.model;
 
-import android.app.Application;
-import android.content.Context;
-import android.content.res.Resources;
 
 import com.udacity.sandwichclub.R;
 
@@ -19,10 +16,6 @@ public class Sandwich  {
     private String image;
     private List<String> ingredients = null;
 
-
-
-
-
     /**
      * No args constructor for use in serialization
      */
@@ -38,8 +31,6 @@ public class Sandwich  {
         this.ingredients = ingredients;
 
     }
-
-
 
     public String getMainName() {
         return mainName;
