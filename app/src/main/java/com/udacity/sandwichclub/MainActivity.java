@@ -8,7 +8,7 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
+
 
 import com.udacity.sandwichclub.recyclerView.SandwichAdapter;
 
