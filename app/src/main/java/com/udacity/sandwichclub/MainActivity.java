@@ -8,13 +8,9 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-
 import com.udacity.sandwichclub.recyclerView.SandwichAdapter;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     private RecyclerView recyclerView;
     private LinearLayoutManager layout;
@@ -35,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         //use a linear layout manager
         layout = new LinearLayoutManager(this);
 
-
-
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
         //adapter = new ArrayAdapter<>(this, R.layout.list_item, sandwiches);
 
@@ -51,11 +45,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerView.getLayoutManager().onRestoreInstanceState(mListState);
         }
         adapter.notifyDataSetChanged();
-
-
     }
-
-
 
     @Override
     protected void onPause() {

@@ -1,11 +1,7 @@
 package com.udacity.sandwichclub.model;
 
-
 import com.udacity.sandwichclub.R;
-
 import java.util.List;
-
-
 
 public class Sandwich  {
 
@@ -129,7 +125,4 @@ public class Sandwich  {
         }
         return place;
     }
-
-
-
 }

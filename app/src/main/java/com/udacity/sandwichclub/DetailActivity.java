@@ -19,7 +19,6 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
-
     private TextView descriptionTv;
     private TextView placeOfOriginTv;
     private TextView alsoKnownAsTv;
@@ -27,22 +26,17 @@ public class DetailActivity extends AppCompatActivity {
     private ImageView ingredientsIv;
     private Sandwich sandwich = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
         ingredientsIv = findViewById(R.id.image_iv);
         descriptionTv = findViewById(R.id.description_tv);
         placeOfOriginTv = findViewById(R.id.origin_tv);
         alsoKnownAsTv = findViewById(R.id.also_known_tv);
         ingredientesTv = findViewById(R.id.ingredients_tv);
-
-
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -89,18 +83,15 @@ public class DetailActivity extends AppCompatActivity {
         placeOfOriginTv.setText(sandwich.getPlaceOfOriginNoEmpty());
         ingredientesTv.setText(sandwich.getIngredientsString());
         alsoKnownAsTv.setText(sandwich.getAlsoKnownAsString());
-
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-
         if (id == android.R.id.home){
             finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
