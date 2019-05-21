@@ -16,11 +16,8 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.MyView
 
     private String[] sandwiches;
     private int index = -1;
-
-
     public SandwichAdapter(String[] sandwiches){
         this.sandwiches = sandwiches;
-
     }
 
     @Override
@@ -28,7 +25,6 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.MyView
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false);
         MyViewHolder vh = new MyViewHolder(view);
         return vh;
-
     }
 
     @Override
@@ -52,9 +48,7 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.MyView
             myViewHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
             myViewHolder.textView.setTextColor(Color.parseColor("#000000"));
         }
-
     }
-
 
     @Override
     public int getItemCount() {
@@ -69,7 +63,6 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-
         public TextView textView;
         ItemClickListener itemClickListener;
 
@@ -81,14 +74,11 @@ public class SandwichAdapter extends RecyclerView.Adapter<SandwichAdapter.MyView
             super(itemView);
             textView = itemView.findViewById(R.id.text_view);
             itemView.setOnClickListener(this);
-
         }
 
         @Override
         public void onClick(View v) {
             itemClickListener.onClick(v, getAdapterPosition());
-
         }
     }
-
 }

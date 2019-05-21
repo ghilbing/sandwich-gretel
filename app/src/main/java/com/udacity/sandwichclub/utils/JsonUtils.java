@@ -18,7 +18,6 @@ public class JsonUtils {
 
     public static Sandwich parseSandwichJson(String json) throws JSONException {
 
-
             JSONObject mainJsonObject = new JSONObject(json);
 
             JSONObject name = mainJsonObject.getJSONObject("name");
@@ -41,10 +40,6 @@ public class JsonUtils {
             for (int i = 0; i < ingredientsA.length() ; i++) {
                 ingredients.add(ingredientsA.getString(i));
             }
-
-
             return new Sandwich(mainName, aka, placeOfOrigin, description, image, ingredients);
-
-
     }
 }
